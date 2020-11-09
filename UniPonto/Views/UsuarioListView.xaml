@@ -1,0 +1,26 @@
+﻿<Window x:Class="UniPonto.Views.UsuarioListView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniPonto.Views"
+        mc:Ignorable="d"
+        Title="Manutenção de usuários" Height="430" Width="634">
+    <Grid>
+
+        <Button x:Name="btnNovo" Content="NOVO" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="btnEditar" Content="EDITAR" HorizontalAlignment="Left" Margin="115,10,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="btnExcluir" Content="EXCLUIR" HorizontalAlignment="Left" Margin="220,10,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="btnRelatorios" Content="RELATÓRIOS" HorizontalAlignment="Left" Margin="487,10,0,0" VerticalAlignment="Top" Width="118"/>
+
+        <ListView x:Name="lvUsuarios" ItemsSource="{Binding}" Margin="10,47,21,27">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nome" DisplayMemberBinding="{Binding Nome}" Width="400"/>
+                    <GridViewColumn Header="Função" DisplayMemberBinding="{Binding Funcao}" Width="200"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+       
+    </Grid>
+</Window>
