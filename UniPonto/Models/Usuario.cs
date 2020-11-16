@@ -13,5 +13,16 @@ namespace UniPonto.Models
 
         public IEnumerable<Ponto> Historico { get; set; }
 
+        public Usuario()
+        {
+            Nome = "";
+            Ativo = true;
+            Funcao = "";
+            Admin = false;
+            Login = "";
+            Senha = "";
+            Historico = new List<Ponto>();
+        }
+
     }
 }

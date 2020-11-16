@@ -1,12 +1,15 @@
 ﻿using LiteDB;
+using System;
+using System.Collections.Generic;
+using UniPonto.Interface;
 using UniPonto.Models;
 
 namespace UniPonto.Repositorios
 {
-    public abstract class BaseRepositorio<T> where T : Entity, new()
-    {        
-        private readonly LiteDatabase db;
-        private readonly ILiteCollection<T> col;
+    public abstract class BaseRepositorio<T> : IDisposable, IBaseRepositorio<T> where T : Entity
+    {
+        public readonly ILiteDatabase db;
+        public readonly ILiteCollection<T> col;
 
         public BaseRepositorio()
         {
@@ -14,12 +17,29 @@ namespace UniPonto.Repositorios
             col = db.GetCollection<T>(typeof(T).Name);
         }
 
-        public virtual void Adicionar(Entity entity)
-        {
-            col.Insert(entity);
+        public virtual void Salvar(T entity)
+        {            
+            col.Upsert(entity);
         }
 
+        public T BuscarPorId(Guid id)
+        {
+            return col.FindOne(x => x.Id == id);
+        }
 
+        public bool Excluir(Guid id)
+        {
+            return col.Delete(id);
+        }
 
+        public IEnumerable<T> ObterTodos()
+        {
+            return col.FindAll();
+        }
+
+        public void Dispose()
+        {
+            db?.Dispose();
+        }
     }
 }

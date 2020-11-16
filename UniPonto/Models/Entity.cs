@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LiteDB;
+using System;
 
 namespace UniPonto.Models
 {
@@ -9,6 +10,7 @@ namespace UniPonto.Models
             Id = Guid.NewGuid();
         }
 
+        [BsonId]
         public Guid Id { get; set; }
     }
 }

@@ -5,19 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniPonto.Views"
         mc:Ignorable="d"
-        Title="Manutenção de usuários" Height="430" Width="634">
+        Title="Manutenção de usuários" Height="430" Width="634" WindowStartupLocation="CenterScreen">
     <Grid>
 
-        <Button x:Name="btnNovo" Content="NOVO" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="btnEditar" Content="EDITAR" HorizontalAlignment="Left" Margin="115,10,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="btnExcluir" Content="EXCLUIR" HorizontalAlignment="Left" Margin="220,10,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="btnRelatorios" Content="RELATÓRIOS" HorizontalAlignment="Left" Margin="487,10,0,0" VerticalAlignment="Top" Width="118"/>
+        <Button x:Name="btnNovo" Content="NOVO" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Click="btnNovo_Click"/>
+        <Button x:Name="btnEditar" Content="EDITAR" HorizontalAlignment="Left" Margin="115,10,0,0" VerticalAlignment="Top" Width="100" Click="btnEditar_Click"/>
+        <Button x:Name="btnExcluir" Content="EXCLUIR" HorizontalAlignment="Left" Margin="220,10,0,0" VerticalAlignment="Top" Width="100" Click="btnExcluir_Click"/>
+        <Button x:Name="btnRelatorios" Content="RELATÓRIOS" HorizontalAlignment="Left" Margin="487,10,0,0" VerticalAlignment="Top" Width="118" Click="btnRelatorios_Click"/>
 
         <ListView x:Name="lvUsuarios" ItemsSource="{Binding}" Margin="10,47,21,27">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Nome" DisplayMemberBinding="{Binding Nome}" Width="400"/>
-                    <GridViewColumn Header="Função" DisplayMemberBinding="{Binding Funcao}" Width="200"/>
+                    <GridViewColumn Header="Nome" DisplayMemberBinding="{Binding Nome}" Width="315"/>
+                    <GridViewColumn Header="Função" DisplayMemberBinding="{Binding Funcao}" Width="150"/>
+                    <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Ativo}" Width="100"/>
                 </GridView>
             </ListView.View>
         </ListView>

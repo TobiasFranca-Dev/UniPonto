@@ -67,7 +67,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Interface\IBaseRepositorio.cs" />
+    <Compile Include="Interface\IPontoRepositorio.cs" />
+    <Compile Include="Interface\IUsuarioRepositorio.cs" />
     <Compile Include="Repositorios\BaseRepositorio.cs" />
+    <Compile Include="Repositorios\PontoRepositorio.cs" />
+    <Compile Include="Repositorios\UsuarioRepositorio.cs" />
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
@@ -78,8 +83,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Views\RelatorioView.xaml.cs">
+      <DependentUpon>RelatorioView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UsuarioListView.xaml.cs">
       <DependentUpon>UsuarioListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UsuarioRegistroView.xaml.cs">
+      <DependentUpon>UsuarioRegistroView.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\LoginView.xaml">
       <SubType>Designer</SubType>
@@ -89,7 +100,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\RelatorioView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\UsuarioListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UsuarioRegistroView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
